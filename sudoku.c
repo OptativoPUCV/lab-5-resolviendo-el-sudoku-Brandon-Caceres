@@ -53,8 +53,8 @@ List* get_adj_nodes(Node* n){
     List* list=createList();
 
     int i,k,j;
-    for (i = 0; i < 9; i++){
-        for (k = 0; k < 9; k++){
+    for (i = 0; i <= 9; i++){
+        for (k = 0; k <= 9; k++){
             if (n->sudo[i][j] == 0){
                 for (j = 1; j <= 9; j++){
                     Node* nuevo = copy(n);
