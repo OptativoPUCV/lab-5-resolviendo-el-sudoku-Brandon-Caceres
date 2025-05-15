@@ -70,8 +70,8 @@ int is_valid(Node* n){
         }
     }
 
-    for (k = 0; k < 9; k++) { 
-        for (p = 0; p < 9; p++) {
+    for (k = 0; k < 3; k++) { 
+        for (p = 0; p < 3; p++) {
             int i = 3 * (k / 3) + (p / 3);
             int j = 3 * (k % 3) + (p % 3);
 
