@@ -70,17 +70,16 @@ int is_valid(Node* n){
         }
     }
 
-    for (i = 0; i < 9; i++){
-        for (k = 0; k < 9; k++){
-            for(j=0;j<9;j++){
-                int i=3*(k/3) + (j/3);
-                int j=3*(k%3) + (j%3);
-                if (n->sudo[i][k] != 0){
-                    for (int l = j + 1; l < 9; l++) {
-                        if (n->sudo[i][k] == n->sudo[i][l]) {
-                            return 0;
-                        }
-                    }
+    for (i = 0; i < 9; i++) {
+        for (k = 0; k < 9; k++) {
+            for (j = 0; j < 9; j++) {
+                int x = 3 * i + j / 3;
+                int y = 3 * k + j % 3;
+                if(n->sudo[x][y] == 0) continue;
+                for (int p = j + 1; p < 9; p++){
+                    int x2 = 3 * i + p / 3;
+                    int y2 = 3 * k + p % 3;
+                    if (n->sudo[x][y] == n->sudo[x2][y2]) return 0;
                 }
             }
         }
