@@ -72,7 +72,7 @@ int is_valid(Node* n){
         int bandera[10] = {0};
         for (k = 0; k < 9; k++) {
             int p = 3 * (i / 3) + (k / 3);
-            int j = 3 * (i % 3) + (k % 3);
+            j = 3 * (i % 3) + (k % 3);
             int val = n->sudo[p][j];
             if (val != 0) {
                 if (bandera[val]) return 0;
