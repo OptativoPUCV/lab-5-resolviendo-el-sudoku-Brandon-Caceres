@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-    int i,k,j;
+    int i,k,j,p;
     
     for (i = 0; i < 9; i++){
         int bandera[10] = {0};
@@ -71,7 +71,7 @@ int is_valid(Node* n){
     for (i = 0; i < 9; i++) {
         int bandera[10] = {0};
         for (k = 0; k < 9; k++) {
-            int p = 3 * (i / 3) + (k / 3);
+            p = 3 * (i / 3) + (k / 3);
             j = 3 * (i % 3) + (k % 3);
             int val = n->sudo[p][j];
             if (val != 0) {
