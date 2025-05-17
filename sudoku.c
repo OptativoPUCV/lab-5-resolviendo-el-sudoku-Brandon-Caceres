@@ -132,6 +132,7 @@ Node* DFS(Node* initial, int* cont){
             aux = next(adyacentes);
         }
         free(valor);
+        free(aux);
     }
     return NULL;
 }
