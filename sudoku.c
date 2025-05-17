@@ -129,7 +129,7 @@ Node* DFS(Node* initial, int* cont){
         Node* aux = first(adyacentes);
         while (aux != NULL){
             push(pila, aux);
-            aux = nex(adyacentes);
+            aux = next(adyacentes);
         }
     }
     return NULL;
