@@ -71,8 +71,8 @@ int is_valid(Node* n){
     for (i = 0; i < 3; i++) {
         for (k = 0; k < 3; k++) {
             int bandera[10] = {0};
-            for (j = 0; j < 9; j++) {
-                for (int p = j + 1; p < 9; p++){
+            for (j = 0; j < 3; j++) {
+                for (int p = j + 1; p < 3; p++){
                     int aux = n->sudo[3*i + j][3*k + p];
                     if (aux != 0){
                         if (bandera[aux]) return 0;
@@ -98,7 +98,7 @@ List* get_adj_nodes(Node* n){
                     Node* nuevo = copy(n);
                     nuevo->sudo[i][k] = j;
                     if (is_valid(nuevo)) pushBack(list, nuevo);
-                    else free(nuevo);
+                    free(nuevo);
                 }
                 return list;
             }
