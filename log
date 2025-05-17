@@ -132,3 +132,17 @@ sá., 17 de may. de 2025 14:49:06:
  tests:  7|1
 total_score: 55/70
 ea9503a
+sá., 17 de may. de 2025 15:04:11: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:132:19: error: implicit declaration of function 'nex' [-Werror=implicit-function-declaration]
+             aux = nex(adyacentes);
+                   ^~~
+sudoku.c:132:17: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+             aux = nex(adyacentes);
+                 ^
+cc1.exe: all warnings being treated as errors
+a057489
