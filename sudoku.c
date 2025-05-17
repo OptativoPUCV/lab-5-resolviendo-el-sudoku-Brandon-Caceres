@@ -47,39 +47,37 @@ int is_valid(Node* n){
     int i,k,j;
     
     for (i = 0; i < 9; i++){
+        int bandera[10] = {0};
         for (k = 0; k < 9; k++){
-          if (n->sudo[i][k] != 0){
-              for (j = k + 1; j < 9; j++) {
-                    if (n->sudo[i][k] == n->sudo[i][j]) {
-                        return 0;
-                    }
-              }
+            int aux = n->sudo[i][k];
+            if (aux != 0){
+                if (bandera[aux]) return 0;
+                bandera[aux] = 1;
           }
         }
     }
 
-    for (k = 0; k < 9; k++) {
-        for (i = 0; i < 9; i++) {
-            if (n->sudo[i][k] != 0) {
-                for (j = i + 1; j < 9; j++) {
-                    if (n->sudo[j][k] == n->sudo[i][k]) {
-                        return 0;
-                    }
-                }
-            }
+    for (i = 0; i < 9; i++){
+        int bandera[10] = {0};
+        for (k = 0; k < 9; k++){
+            int aux = n->sudo[k][i];
+            if (aux != 0){
+                if (bandera[aux]) return 0;
+                bandera[aux] = 1;
+          }
         }
     }
 
-    for (i = 0; i < 9; i++) {
-        for (k = 0; k < 9; k++) {
+    for (i = 0; i < 3; i++) {
+        for (k = 0; k < 3; k++) {
+            int bandera[10] = {0};
             for (j = 0; j < 9; j++) {
-                int x = 3 * i + j / 3;
-                int y = 3 * k + j % 3;
-                if(n->sudo[x][y] == 0) continue;
                 for (int p = j + 1; p < 9; p++){
-                    int x2 = 3 * i + p / 3;
-                    int y2 = 3 * k + p % 3;
-                    if (n->sudo[x][y] == n->sudo[x2][y2]) return 0;
+                    int aux = n->sudo[3*i + j][3*k + p];
+                    if (aux != 0){
+                        if (bandera[aux]) return 0;
+                        bandera[aux] = 1;
+                    }
                 }
             }
         }
