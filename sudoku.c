@@ -122,7 +122,7 @@ Node* DFS(Node* initial, int* cont){
     while (!is_empty(pila)){
         Node* valor = top(pila);
         pop(pila);
-        cont++;
+        (*cont)++;
         if (is_final(valor)) return valor;
 
         List* adyacentes = get_adj_nodes(valor);
@@ -139,8 +139,8 @@ Node* DFS(Node* initial, int* cont){
 
 
 
-/*
-int main( int argc, char *argv[] ){
+
+/*int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
